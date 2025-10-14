@@ -7,11 +7,11 @@ CREATE TABLE loja (
 	PRIMARY KEY(ID)
 );
 INSERT INTO loja(ID, nome, endereco, telefone) VALUES 
-	(null, 'Loja1', 'endereço1', 'telefone1'),
-	(null, 'Loja2', 'endereço2', 'telefone2'),
-	(null, 'Loja3', 'endereço3', 'telefone3'),
-	(null, 'Loja4', 'endereço4', 'telefone4'),
-	(null, 'Loja5', 'endereço5', 'telefone5')
+	(null, 'Adalberto Eletrônicos', 'endereço1', 'telefone1'),
+	(null, 'Três Irmãos E.E', 'endereço2', 'telefone2'),
+	(null, 'Meshii no pese', 'endereço3', 'telefone3'),
+	(null, 'Magazineluiza', 'endereço4', 'telefone4'),
+	(null, 'Hegnareston', 'endereço5', 'telefone5')
 ;
 
 
@@ -29,16 +29,16 @@ CREATE TABLE produto (
 	PRIMARY KEY(ID)
 );
 INSERT INTO produto(ID, nome, descricao, preco, tipo, categoria, data_lancamento, desconto) VALUES 
-	(null, 'nome1', 'descrição1', 1.00, 'novo', 'outros', '2000-01-01', 10),
-	(null, 'nome2', 'descrição2', 1.00, 'novo', 'outros', '2000-01-01', 10),
-	(null, 'nome3', 'descrição3', 1.00, 'novo', 'outros', '2000-01-01', 10),
-	(null, 'nome4', 'descrição4', 1.00, 'novo', 'outros', '2000-01-01', 10),
-	(null, 'nome5', 'descrição5', 1.00, 'novo', 'outros', '2000-01-01', 10),
-	(null, 'nome6', 'descrição6', 1.00, 'novo', 'outros', '2000-01-01', 10),
-	(null, 'nome7', 'descrição7', 1.00, 'novo', 'outros', '2000-01-01', 10),
-	(null, 'nome8', 'descrição8', 1.00, 'novo', 'outros', '2000-01-01', 10),
-	(null, 'nome9', 'descrição9', 1.00, 'novo', 'outros', '2000-01-01', 10),
-	(null, 'nome10', 'descrição10', 1.00, 'novo', 'outros', '2000-01-01', 10)
+	(null, 'celular', 'descrição1', 1.00, 'novo', 'outros', '2000-01-01', 10),
+	(null, 'liquidificador', 'descrição2', 1.00, 'novo', 'outros', '2000-01-01', 10),
+	(null, 'fonte', 'descrição3', 1.00, 'novo', 'outros', '2000-01-01', 10),
+	(null, 'geladeira', 'descrição4', 1.00, 'novo', 'outros', '2000-01-01', 10),
+	(null, 'televisão', 'descrição5', 1.00, 'novo', 'outros', '2000-01-01', 10),
+	(null, 'teclado', 'descrição6', 1.00, 'novo', 'outros', '2000-01-01', 10),
+	(null, 'smartwatch', 'descrição7', 1.00, 'novo', 'outros', '2000-01-01', 10),
+	(null, 'telefone fixo', 'descrição8', 1.00, 'novo', 'outros', '2000-01-01', 10),
+	(null, 'cadeira ergonômica', 'descrição9', 1.00, 'novo', 'outros', '2000-01-01', 10),
+	(null, 'calular', 'descrição10', 1.00, 'novo', 'outros', '2000-01-01', 10)
 ;
 
 
