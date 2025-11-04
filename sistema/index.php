@@ -10,9 +10,26 @@
 
 <body>
 
-    <div class="container my-4">    
+    <div class="container my-4">
         <h1>Página Principal</h1>
+        <div>
+            <form action="" method="POST">
 
+                <div>
+                    <input type="text" id="" name="">
+                    <input type="email" id="" name="">
+                    <input type="date" id="" name="">
+
+                    <div>
+                        <input type="submit" id="" name="">
+                    </div>
+
+                </div>
+
+
+            </form>
+
+        </div>
     </div>
 </body>
 

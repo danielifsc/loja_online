@@ -2,14 +2,19 @@
     include 'conexao.php';
     $id = $_POST['btnExcluir'];
 
-    // APAGAR MATRICULA SE EXISTIR
-    $sql = $pdo->prepare("DELETE FROM matricula WHERE aluno = ?");
+    // APAGAR produto-caracteristica SE EXISTIR
+    $sql = $pdo->prepare("DELETE FROM produto_caracteristica WHERE id_produto = ?");
     $sql->execute([$id]);
 
-    // APAGAR O ALUNO
-    $sql = $pdo->prepare("DELETE FROM Aluno WHERE id = ?");
+    // APAGAR estoque se Existir
+    $sql = $pdo->prepare("DELETE FROM Estoque WHERE id_produto = ?");
+    $sql ->execute([$id]);
+
+
+    // APAGAR O PRODUTO
+    $sql = $pdo->prepare("DELETE FROM produto WHERE id = ?");
     $sql->execute([$id]);
 
-    header("Location: index.php");
+    header("Location: produtos.php");
     exit;
 ?>
