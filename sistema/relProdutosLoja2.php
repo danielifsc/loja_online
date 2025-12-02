@@ -43,7 +43,7 @@
                 while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
             ?>
                 <tr>
-                    <td><?php echo $linha['nomeprod']?></td>
+                    <td><?php echo $linha['nomeProd']?></td>
                     <td><?php echo $linha['descricao'] ?></td>
                     <td><?php echo $linha['preco'] ?></td>
                     <td><?php echo $linha['tipo'] ?></td>
