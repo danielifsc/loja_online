@@ -118,6 +118,20 @@
                 </div>
             </a>
         </div>
+          <!-- Carrinho Compras -->
+        <div class="col-12 col-md-6 col-lg-3">
+            <a href="carrinhoCompras.php" class="text-decoration-none">
+                <div class="card dashboard-card shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-placeholder mb-3">
+                            🛒
+                        </div>
+                        <h5 class="card-title">Carrinho de Compras</h5>
+                        <p class="card-text text-muted">Compre produtos da Loja</p>
+                    </div>
+                </div>
+            </a>
+        </div>
     </div>
 </div>
 

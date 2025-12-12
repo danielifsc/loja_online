@@ -1,6 +1,8 @@
 <?php 
     include 'conexao.php';
 
+    
+
     $nome = $_POST['nomeCarac'];
     $descricao = $_POST['descrCarac'];
  

@@ -53,6 +53,47 @@ CREATE TABLE Estoque (
     FOREIGN KEY (id_loja) REFERENCES Loja(id)
 );
 
+-- Criação da tabela de associação 'Cliente'
+CREATE TABLE Cliente (
+    id INT(4) AUTO_INCREMENT PRIMARY KEY,
+	nome VARCHAR(255) NOT NULL,
+    email VARCHAR(50), 
+    UNIQUE (email),
+    data_cadastro DATE,
+    telefone VARCHAR(15) NOT NULL,
+    senha_hash VARCHAR(255)
+);
+
+-- Criação da tabela de associação 'Venda'
+CREATE TABLE Venda (
+    id INT(4) AUTO_INCREMENT PRIMARY KEY,
+	id_cliente INT (4),
+    id_loja INT (4),  
+    data_venda DATE,
+    valor_total DECIMAL (8,2),
+    FOREIGN KEY (id_cliente) REFERENCES Cliente(id),
+    FOREIGN KEY (id_loja) REFERENCES Loja(id)
+);
+
+-- Criação da tabela de associação 'itemVenda'
+CREATE TABLE itemVenda (
+    id INT(4) AUTO_INCREMENT PRIMARY KEY,
+	id_venda INT (4),
+    id_produto INT (4),  
+    quantidade DECIMAL (6,2),
+    preco_unitario DECIMAL (6,2),
+    FOREIGN KEY (id_venda) REFERENCES venda(id),
+    FOREIGN KEY (id_produto) REFERENCES produto(id)
+);
+
+CREATE TEMPORARY TABLE CarrinhoTemporario (
+  Id_sessao VARCHAR(255) PRIMARY KEY,
+  Id_produto INT(4), 
+  quantidade DECIMAL(6,2),
+  FOREIGN KEY (id_produto) REFERENCES Produto(id)
+);
+
+
 -- --------------------------------------------------------------------------------
 -- VIEWS DO BANCO
 CREATE VIEW viewProdutosLoja AS
