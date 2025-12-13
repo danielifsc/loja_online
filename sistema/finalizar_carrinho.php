@@ -1,30 +1,35 @@
 <?php
 include 'conexao.php';
 
-$nome = $_POST['nomeLoja'];
-$telefone = $_POST['telLoja'];
-$email = $_POST['ruaLoja'];
-$data_cadastro = $_POST['numLoja'];
-$senha_hash = $_POST['bairroLoja'];
+$nome = $_POST['nome'];
+$telefone = $_POST['tel'];
+$email = $_POST['email'];
+$data_cadastro = $_POST['data_cadastro'];
+$senha_hash = $_POST['senha_hash'];
 
-$cep = $_POST['cepLoja'];
-$complemento = $_POST['complLoja'];
-$cidade = $_POST['cidadeLoja'];
+$id_cliente = $_POST['id_cliente'];
+$id_loja = $_POST['id_loja'];
+$valor_total = $_POST['valor_total'];
+$quantidade_desejada = $_POST['quantidade_desejada'];
 
-$sql = $pdo->prepare("INSERT INTO venda(data_venda, id_cliente, 
-    id_loja, valor_total)
+$sql = $pdo->prepare("INSERT INTO venda( id_cliente, 
+    id_loja, data_venda, valor_total)
     VALUES (?, ?, ?, ?)");
 $sql->execute([$id_cliente, $id_loja, $data_venda, $valor_total]);
 
 
-$sql = $pdo->prepare("INSERT INTO itemVenda (nome, email
+
+$sql = $pdo->prepare("SELECT e.quantidade_disponivel >= $quantidade_desejada 
+FROM Estoque e 
+WHERE e.id_produto = ? AND e.id_loja = ?; 
+INSERT INTO itemVenda (nome, email
      telefone, data_cadastro, senha_hash )
     VALUES (?, ?, ?, ?, ?)");
-$sql->execute([$nome, $email , $telefone, $data_cadastro, $senha_hash]);
+$sql->execute([$nome, $email, $telefone, $data_cadastro, $senha_hash]);
 
 $sql = $pdo->prepare("UPDATE estoque SET quantidade_disponivel = quantidade_disponivel - ?
- WHERE   ");
-$sql->execute([$id]);
+ WHERE estoque.id_loja = loja.id ");
+$sql->execute([$quantidade_desejada]);
 
-header("Location: lojas.php");
+header("Location: carrinhoCompras.php");
 exit;

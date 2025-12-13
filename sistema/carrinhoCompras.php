@@ -49,15 +49,18 @@ INNER JOIN loja ON estoque.id_loja = loja.id");
                 while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
                 ?>
                     <tr>
-                     
-                        <td><?php echo $linha['nome_produto'] ?></td>   
+
+                        <td><?php echo $linha['nome_produto'] ?></td>
                         <td><?php echo $linha['categoria'] ?></td>
                         <td><?php echo $linha['nome_loja'] ?></td>
-                        <td><input type="number"><?php //echo $linha['quantidade_disponivel'] ?></td>
+                        <td>
+                            <form action="adicionar_carrinho.php" method="POST">
+                                <input type="number" name='quantidade'>                     
+                            </form>
                         <td><?php echo $linha['preco'] ?></td>
                         <td><?php echo $linha['comDesc'] ?></td>
                         <td><?php echo $linha['subtotal'] ?></td>
-                        
+
                         <td>
                         <td>
                             <form action="adicionar_carrinho.php" method="POST">
