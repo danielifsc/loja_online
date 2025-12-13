@@ -12,7 +12,7 @@ $id_loja = $_POST['id_loja'];
 $valor_total = $_POST['valor_total'];
 $quantidade_desejada = $_POST['quantidade_desejada'];
 
-$sql = $pdo->prepare("INSERT INTO venda( id_cliente, 
+$sql = $pdo->prepare("INSERT INTO venda(id_cliente, 
     id_loja, data_venda, valor_total)
     VALUES (?, ?, ?, ?)");
 $sql->execute([$id_cliente, $id_loja, $data_venda, $valor_total]);
